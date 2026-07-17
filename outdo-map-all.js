@@ -101,6 +101,7 @@ function renderInfo(){
   if(!g){
     el.innerHTML = '<span class="onm-eyebrow" style="color:var(--orange)">The network</span>'+
       '<h3>One city, every route.</h3>'+
+      '<p>All 39 NCT services, plotted from the operator\'s registered route data — Arnold to Clifton, Strelley to Southwell.</p>'+
       '<p>Tap any route to see where it goes and what it reaches.</p>';
   } else {
     el.innerHTML = '<div class="onm-selhead"><span class="onm-dot" style="background:'+g.color+'"></span>'+
@@ -116,6 +117,7 @@ function renderInfo(){
 function openModal(){
   var g = cur();
   $('onm-ctx').innerHTML = (g?'<span class="onm-dot" style="width:12px;height:12px;background:'+g.color+'"></span>':'')+
+    '<span>'+esc(summary(g))+(g?'':' — 39 services across Nottingham.')+'</span>';
   $('onm-f-route').value = summary(g);
   $('onm-f-area').value = g ? g.area+' Nottingham' : 'All areas';
   $('onm-f-url').value = window.location.href;
